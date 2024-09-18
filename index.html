@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>hxj的图片切换示例</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #bigImage {
+            width: 90%; /* 使用百分比宽度 */
+            height: auto; /* 高度自动，保持图片比例 */
+            margin-bottom: 10px;
+        }
+        .smallImageContainer {
+            display: flex;
+            justify-content: center;
+            width: 90%; /* 容器宽度也使用百分比 */
+        }
+        .smallImage {
+            width: 18%; /* 小图宽度，5张图片加起来占90% */
+            height: auto; /* 高度自动，保持图片比例 */
+            margin-right: 1%; /* 小图之间的间隔 */
+            cursor: pointer;
+        }
+        .smallImage:last-child {
+            margin-right: 0; /* 最后一个小图不需要右边距 */
+        }
+    </style>
+</head>
+<body>
+
+<img id="bigImage" src="image1(1).jpg" alt="大图展示区域">
+
+<div class="smallImageContainer">
+    <img class="smallImage" src="image1(1).jpg" alt="小图1" onclick="changeImage('image1.jpg')">
+    <img class="smallImage" src="image2(1).jpg" alt="小图2" onclick="changeImage('image2.jpg')">
+    <img class="smallImage" src="image3(1).jpg" alt="小图3" onclick="changeImage('image3.jpg')">
+    <img class="smallImage" src="image4(1).jpg" alt="小图4" onclick="changeImage('image4.jpg')">
+    <img class="smallImage" src="image5(1).jpg" alt="小图5" onclick="changeImage('image5.jpg')">
+</div>
+
+<script>
+    function changeImage(imageSrc) {
+        var bigImage = document.getElementById('bigImage');
+        bigImage.src = imageSrc;
+    }
+</script>
+
+</body>
+</html>
